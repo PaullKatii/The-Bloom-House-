@@ -3,23 +3,51 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
-    // Public customers may create bookings.
-    // They cannot read, edit, or delete bookings.
     match /bookings/{bookingId} {
+
+      // CUSTOMER
+      // Pengunjung hanya boleh membuat booking baru.
       allow create: if
         request.resource.data.keys().hasOnly([
-          'nama', 'whatsapp', 'layanan', 'tanggal', 'tanggalDisplay',
-          'jam', 'catatan', 'status', 'createdAt'
+          'nama',
+          'whatsapp',
+          'layanan',
+          'tanggal',
+          'tanggalDisplay',
+          'jam',
+          'catatan',
+          'status',
+          'createdAt'
         ])
-        && request.resource.data.nama is string
-        && request.resource.data.whatsapp is string
-        && request.resource.data.layanan is string
-        && request.resource.data.tanggal is string
-        && request.resource.data.jam is string
-        && request.resource.data.status == 'pending';
+        &&
+        request.resource.data.nama is string
+        &&
+        request.resource.data.whatsapp is string
+        &&
+        request.resource.data.layanan is string
+        &&
+        request.resource.data.tanggal is string
+        &&
+        request.resource.data.jam is string
+        &&
+        request.resource.data.status == 'pending';
 
-      // Admin must be authenticated.
-      allow read, update, delete: if request.auth != null;
+      // ADMIN
+      // Hanya user yang sudah login Firebase
+      // yang dapat melihat booking.
+      allow read: if request.auth != null;
+
+      // ADMIN
+      // Admin hanya boleh mengubah status booking.
+      allow update: if
+        request.auth != null
+        &&
+        request.resource.data.diff(resource.data).affectedKeys()
+          .hasOnly(['status']);
+
+      // ADMIN
+      // Admin boleh menghapus booking.
+      allow delete: if request.auth != null;
     }
   }
 }
