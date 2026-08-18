@@ -1,0 +1,25 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Public customers may create bookings.
+    // They cannot read, edit, or delete bookings.
+    match /bookings/{bookingId} {
+      allow create: if
+        request.resource.data.keys().hasOnly([
+          'nama', 'whatsapp', 'layanan', 'tanggal', 'tanggalDisplay',
+          'jam', 'catatan', 'status', 'createdAt'
+        ])
+        && request.resource.data.nama is string
+        && request.resource.data.whatsapp is string
+        && request.resource.data.layanan is string
+        && request.resource.data.tanggal is string
+        && request.resource.data.jam is string
+        && request.resource.data.status == 'pending';
+
+      // Admin must be authenticated.
+      allow read, update, delete: if request.auth != null;
+    }
+  }
+}

@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#4d3028" />
+    <meta name="description" content="The Bloom House Beauty Salon" />
+
+    <title>The Bloom House — Beauty Salon</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="logo1.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="intro" id="intro">
+      <div class="intro-flower">✿</div>
+      <div class="intro-logo">The Bloom House</div>
+
+      <div class="intro-subtitle">BEAUTY SALON</div>
+      <div class="intro-line"><span></span></div>
+    </div>
+
+    <header class="header" id="header">
+      <div class="container nav">
+        <a href="#home" class="brand">
+          <span class="brand-flower">✿</span>
+          <span>The Bloom House</span>
+          <small>BEAUTY SALON</small>
+        </a>
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Buka menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="nav-links" id="navLinks">
+          <a href="#home">Beranda</a>
+          <a href="#services">Layanan</a>
+          <a href="#gallery">Galeri</a>
+          <a href="#about">Tentang Kami</a>
+          <a href="#booking">Booking</a>
+          <a href="#contact">Kontak</a>
+          <a class="nav-book" href="#booking">Booking Sekarang</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero section" id="home">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">BEAUTY STARTS HERE</p>
+          <h1>Bloom into<br /><em>your beauty.</em></h1>
+          <p class="hero-text">
+            Tempat untuk merawat rambut, kulit, dan diri sendiri dengan suasana
+            nyaman dan pelayanan yang personal.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#booking"
+              ><span>☏</span> Booking Sekarang</a
+            >
+            <a class="btn btn-outline" href="#services">Lihat Layanan</a>
+          </div>
+          <div class="hero-note">
+            <span>✦ Cepat</span><i>•</i><span>✦ Mudah</span><i>•</i
+            ><span>✦ Tanpa Ribet</span>
+          </div>
+        </div>
+        <div class="hero-visual reveal reveal-delay">
+          <div class="hero-image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=85"
+              alt="Interior salon"
+            />
+            <div class="hero-caption">
+              <span>THE BLOOM HOUSE</span
+              ><strong>Feel good.<br />Look beautiful.</strong>
+            </div>
+          </div>
+          <div class="floating-flower">✿</div>
+        </div>
+      </section>
+
+      <section class="services section" id="services">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">LAYANAN KAMI</p>
+            <h2>Perawatan terbaik<br /><em>untukmu.</em></h2>
+            <p>
+              Pilih perawatan yang kamu butuhkan. Harga dibuat jelas agar kamu
+              tidak perlu menebak-nebak.
+            </p>
+          </div>
+          <div class="service-grid">
+            <article class="service-card reveal">
+              <div class="service-icon">✂</div>
+              <h3>Hair Cut</h3>
+              <p>Potong rambut sesuai gaya yang kamu mau.</p>
+              <strong>Rp75.000</strong>
+            </article>
+            <article class="service-card reveal">
+              <div class="service-icon">✦</div>
+              <h3>Hair Coloring</h3>
+              <p>Mewarnai rambut dengan hasil yang cantik dan natural.</p>
+              <strong>Rp250.000</strong>
+            </article>
+            <article class="service-card reveal">
+              <div class="service-icon">♢</div>
+              <h3>Hair Treatment</h3>
+              <p>Perawatan rambut agar terasa lebih sehat dan lembut.</p>
+              <strong>Rp150.000</strong>
+            </article>
+            <article class="service-card reveal">
+              <div class="service-icon">♡</div>
+              <h3>Facial</h3>
+              <p>Perawatan wajah untuk kulit terasa bersih dan fresh.</p>
+              <strong>Rp100.000</strong>
+            </article>
+            <article class="service-card reveal">
+              <div class="service-icon">○</div>
+              <h3>Manicure</h3>
+              <p>Perawatan kuku tangan agar tetap cantik dan rapi.</p>
+              <strong>Rp60.000</strong>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery section" id="gallery">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">HASIL KARYA KAMI</p>
+            <h2>Little details,<br /><em>beautiful results.</em></h2>
+          </div>
+          <div class="gallery-track-wrap">
+            <button
+              class="gallery-arrow left"
+              id="galleryPrev"
+              aria-label="Foto sebelumnya"
+            >
+              ‹
+            </button>
+            <div class="gallery-track" id="galleryTrack">
+              <button
+                class="gallery-item"
+                data-full="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=1200&q=90"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=700&q=85"
+                  alt="Hair style"
+                />
+              </button>
+              <button
+                class="gallery-item"
+                data-full="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=90"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&q=85"
+                  alt="Beauty"
+                />
+              </button>
+              <button
+                class="gallery-item"
+                data-full="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1200&q=90"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=700&q=85"
+                  alt="Salon"
+                />
+              </button>
+              <button
+                class="gallery-item"
+                data-full="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=1200&q=90"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=700&q=85"
+                  alt="Beauty treatment"
+                />
+              </button>
+            </div>
+            <button
+              class="gallery-arrow right"
+              id="galleryNext"
+              aria-label="Foto berikutnya"
+            >
+              ›
+            </button>
+          </div>
+          <p class="gallery-hint reveal">Tap foto untuk melihat lebih besar</p>
+        </div>
+      </section>
+
+      <section class="about section" id="about">
+        <div class="container about-grid">
+          <div class="about-image reveal">
+            <img
+              src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1000&q=85"
+              alt="Ruang salon"
+            />
+            <div class="about-stamp">THE<br />BLOOM<br />HOUSE</div>
+          </div>
+          <div class="about-copy reveal reveal-delay">
+            <p class="eyebrow">TENTANG KAMI</p>
+            <h2>Lebih dari sekadar<br /><em>salon.</em></h2>
+            <p>
+              The Bloom House hadir untuk memberikan pengalaman perawatan yang
+              nyaman, hangat, dan tidak terburu-buru.
+            </p>
+            <p>
+              Kami percaya setiap orang punya versi cantiknya sendiri. Karena
+              itu, kami fokus pada hasil yang sesuai dengan kebutuhan dan gaya
+              kamu.
+            </p>
+            <div class="benefits">
+              <div>
+                <span>♡</span><strong>Pelayanan Personal</strong
+                ><small>Nyaman & ramah</small>
+              </div>
+              <div>
+                <span>✦</span><strong>Beauty Specialist</strong
+                ><small>Berpengalaman</small>
+              </div>
+              <div>
+                <span>♢</span><strong>Produk Berkualitas</strong
+                ><small>Dipilih dengan baik</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="booking section" id="booking">
+        <div class="container booking-grid">
+          <div class="booking-intro reveal">
+            <p class="eyebrow">BOOKING</p>
+            <h2>Atur waktu<br /><em>cantikmu.</em></h2>
+            <p>
+              Isi data singkat. Booking akan tersimpan ke sistem dan detailnya
+              bisa langsung diteruskan ke WhatsApp The Bloom House.
+            </p>
+            <div class="booking-info">
+              <div>
+                <span>⌖</span>
+                <p><strong>Lokasi</strong><br />Jl. Wakalely</p>
+              </div>
+              <div>
+                <span>◷</span>
+                <p>
+                  <strong>Jam Buka</strong><br />Senin–Sabtu 09.00–20.00 WIB<br />Minggu
+                  15.00–20.00 WIB
+                </p>
+              </div>
+              <div>
+                <span>☏</span>
+                <p><strong>WhatsApp</strong><br />0812-9650-9812</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="booking-card reveal reveal-delay">
+            <div class="booking-card-head">
+              <span class="booking-flower">✿</span>
+              <div>
+                <p class="eyebrow">RESERVATION</p>
+                <h3>Booking Salon</h3>
+              </div>
+            </div>
+            <form id="bookingForm" novalidate>
+              <div class="form-group">
+                <label for="customerName">Nama Lengkap</label
+                ><input
+                  id="customerName"
+                  type="text"
+                  placeholder="Contoh: Susan"
+                  autocomplete="name"
+                  required
+                /><small class="form-error"></small>
+              </div>
+              <div class="form-group">
+                <label for="customerPhone">Nomor WhatsApp</label
+                ><input
+                  id="customerPhone"
+                  type="tel"
+                  placeholder="08xxxxxxxxxx"
+                  autocomplete="tel"
+                  required
+                /><small class="form-error"></small>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="service">Pilih Layanan</label
+                  ><select id="service" required>
+                    <option value="">Pilih layanan</option>
+                    <option value="Hair Cut">Hair Cut — Rp75.000</option>
+                    <option value="Hair Coloring">
+                      Hair Coloring — Rp250.000
+                    </option>
+                    <option value="Hair Treatment">
+                      Hair Treatment — Rp150.000
+                    </option>
+                    <option value="Facial">Facial — Rp100.000</option>
+                    <option value="Manicure">
+                      Manicure — Rp60.000
+                    </option></select
+                  ><small class="form-error"></small>
+                </div>
+                <div class="form-group">
+                  <label for="bookingDate">Tanggal</label
+                  ><input id="bookingDate" type="date" required /><small
+                    class="form-error"
+                  ></small>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="bookingTime">Jam Kedatangan</label
+                ><select id="bookingTime" required>
+                  <option value="">Pilih tanggal dahulu</option></select
+                ><small class="form-error"></small>
+                <p class="time-note">Jam tersedia mengikuti jam buka salon.</p>
+              </div>
+              <div class="form-group">
+                <label for="bookingNote">Catatan <span>(opsional)</span></label
+                ><textarea
+                  id="bookingNote"
+                  rows="3"
+                  placeholder="Contoh: ingin potongan layer"
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary booking-submit">
+                <span>☏</span> Simpan Booking & WhatsApp
+              </button>
+              <p
+                class="booking-status"
+                id="bookingStatus"
+                aria-live="polite"
+              ></p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-mini section" id="contact">
+        <div class="container contact-mini-box reveal">
+          <div>
+            <p class="eyebrow">MASIH BINGUNG?</p>
+            <h2>Langsung chat kami.</h2>
+          </div>
+          <a
+            class="btn btn-primary"
+            href="https://wa.me/6281296509812"
+            target="_blank"
+            rel="noopener"
+            >Chat WhatsApp</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-content">
+        <div class="footer-brand">
+          <div class="footer-logo">The Bloom House</div>
+          <small>BEAUTY SALON</small>
+        </div>
+        <p>Beauty is a feeling. Bloom in your own way. ✿</p>
+        <a href="https://wa.me/6281296509812" target="_blank" rel="noopener"
+          >WhatsApp ↗</a
+        >
+      </div>
+      <div class="container copyright">
+        © 2026 The Bloom House. All rights reserved.
+      </div>
+    </footer>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <button class="lightbox-close" id="lightboxClose">×</button
+      ><img id="lightboxImage" src="" alt="Preview" />
+    </div>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
