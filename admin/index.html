@@ -1,1 +1,213 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#4d3028" />
 
+    <title>Admin — The Bloom House</title>
+    <link rel="icon" type="image/png" href="logo1.png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Admin CSS -->
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+
+  <body>
+    <!-- =====================================================
+       LOGIN ADMIN
+  ====================================================== -->
+
+    <div class="login-wrap" id="loginView">
+      <div class="login-card">
+        <div class="flower">✿</div>
+
+        <p class="mini">THE BLOOM HOUSE</p>
+
+        <h1>Admin Login</h1>
+
+        <p class="muted">Masuk untuk mengelola booking salon.</p>
+
+        <form id="loginForm">
+          <!-- EMAIL -->
+          <label for="email">
+            Email
+
+            <input
+              id="email"
+              type="email"
+              placeholder="admin@email.com"
+              autocomplete="email"
+              required
+            />
+          </label>
+
+          <!-- PASSWORD -->
+          <label for="password">
+            Password
+
+            <input
+              id="password"
+              type="password"
+              placeholder="••••••••"
+              autocomplete="current-password"
+              required
+            />
+          </label>
+
+          <!-- LOGIN BUTTON -->
+          <button class="primary" type="submit">Login</button>
+
+          <!-- LOGIN MESSAGE -->
+          <p class="message" id="loginMessage" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+
+    <!-- =====================================================
+       ADMIN DASHBOARD
+  ====================================================== -->
+
+    <div class="dashboard hidden" id="dashboardView">
+      <!-- ===================================================
+         SIDEBAR
+    ==================================================== -->
+
+      <aside>
+        <div class="side-logo">
+          The Bloom House
+
+          <small> ADMIN </small>
+        </div>
+
+        <nav>
+          <a class="active" href="#"> 📋 Booking </a>
+
+          <a href="../index.html" target="_blank"> 🌸 Lihat Website </a>
+        </nav>
+
+        <button class="logout" id="logoutBtn" type="button">Keluar</button>
+      </aside>
+
+      <!-- ===================================================
+         MAIN CONTENT
+    ==================================================== -->
+
+      <main>
+        <!-- TOPBAR -->
+
+        <div class="topbar">
+          <div>
+            <p class="mini">ADMIN DASHBOARD</p>
+
+            <h2>Booking Salon</h2>
+          </div>
+
+          <div class="user" id="adminEmail"></div>
+        </div>
+
+        <!-- =================================================
+           STATISTICS
+      ================================================== -->
+
+        <div class="stats">
+          <div>
+            <span>Total</span>
+            <strong id="totalCount">0</strong>
+          </div>
+
+          <div>
+            <span>Pending</span>
+            <strong id="pendingCount">0</strong>
+          </div>
+
+          <div>
+            <span>Confirmed</span>
+            <strong id="confirmedCount">0</strong>
+          </div>
+
+          <div>
+            <span>Completed</span>
+            <strong id="completedCount">0</strong>
+          </div>
+        </div>
+
+        <!-- =================================================
+           SEARCH & FILTER
+      ================================================== -->
+
+        <div class="toolbar">
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Cari nama / layanan..."
+            aria-label="Cari nama atau layanan"
+          />
+
+          <select id="statusFilter" aria-label="Filter status booking">
+            <option value="all">Semua Status</option>
+
+            <option value="pending">Pending</option>
+
+            <option value="confirmed">Confirmed</option>
+
+            <option value="completed">Completed</option>
+
+            <option value="rejected">Rejected</option>
+          </select>
+
+          <button id="refreshBtn" type="button">↻ Refresh</button>
+        </div>
+
+        <!-- =================================================
+           BOOKING TABLE
+      ================================================== -->
+
+        <div class="table-card">
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>Nama</th>
+                  <th>Layanan</th>
+                  <th>Tanggal</th>
+                  <th>Jam</th>
+                  <th>WhatsApp</th>
+                  <th>Dipesan Pada</th>
+                  <th>Status</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+
+              <tbody id="bookingBody">
+                <tr>
+                  <td colspan="8" class="empty">Memuat booking...</td>
+                </tr>
+              </tbody>
+
+              <tbody id="bookingBody">
+                <tr>
+                  <td colspan="8" class="empty">Memuat booking...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- =====================================================
+       ADMIN JAVASCRIPT
+  ====================================================== -->
+
+    <script type="module" src="admin.js"></script>
+  </body>
+</html>
