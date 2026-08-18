@@ -12,7 +12,7 @@
     <title>The Bloom House — Beauty Salon</title>
 
     <!-- FAVICON -->
-    <link rel="icon" type="image/png" href="logo1.png" />
+    <link rel="icon" type="image/png" href="Logo1.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -278,7 +278,23 @@
                 <h3>Booking Salon</h3>
               </div>
             </div>
-            <form id="bookingForm" novalidate>
+            <div class="customer-mode" id="customerMode">
+  <p class="customer-mode-title">Sudah pernah booking?</p>
+  <div class="customer-mode-buttons">
+    <button type="button" class="customer-mode-btn active" id="newCustomerBtn">Pelanggan Baru</button>
+    <button type="button" class="customer-mode-btn" id="returningCustomerBtn">Pelanggan Lama</button>
+  </div>
+  <div class="returning-customer" id="returningCustomerBox" hidden>
+    <label for="returningPhone">Cari dengan nomor WhatsApp</label>
+    <div class="customer-search-row">
+      <input id="returningPhone" type="tel" placeholder="08xxxxxxxxxx" autocomplete="tel" />
+      <button type="button" class="customer-search-btn" id="findCustomerBtn">Cari</button>
+    </div>
+    <small class="customer-search-message" id="customerSearchMessage"></small>
+  </div>
+</div>
+
+<form id="bookingForm" novalidate>
               <div class="form-group">
                 <label for="customerName">Nama Lengkap</label
                 ><input
