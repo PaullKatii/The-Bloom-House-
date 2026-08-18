@@ -138,24 +138,25 @@ function render() {
     .map((b) => {
       let bookedAt = "-";
 
-      if (b.createdAt) {
-        try {
-          const date = b.createdAt.toDate
-            ? b.createdAt.toDate()
-            : new Date(b.createdAt);
+     if (b.createdAt) {
+  try {
+    const date = b.createdAt.toDate
+      ? b.createdAt.toDate()
+      : new Date(b.createdAt);
 
-          bookedAt =
-            date.toLocaleString("id-ID", {
-              day: "2-digit",
-              month: "long",
-              year: "numeric",
-              hour: "2-digit",
-              minute: "2-digit",
-            }) + " WIB";
-        } catch (e) {
-          bookedAt = "-";
-        }
-      }
+    bookedAt =
+      date.toLocaleString("id-ID", {
+        timeZone: "Asia/Jayapura",
+        day: "2-digit",
+        month: "long",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+      }) + " WIT";
+  } catch (e) {
+    bookedAt = "-";
+  }
+}
 
       return `
     <tr>
