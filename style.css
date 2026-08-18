@@ -354,3 +354,119 @@ footer { padding: 50px 0 25px; background: var(--brown); color: #fff; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+
+/* =========================================
+   RETURNING CUSTOMER
+========================================= */
+
+.customer-mode {
+  margin-bottom: 18px;
+  padding: 15px;
+  border: 1px solid #e8d9d0;
+  border-radius: 14px;
+  background: #fffaf7;
+}
+
+.customer-mode-title {
+  margin: 0 0 10px;
+  color: #4d3028;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.customer-mode-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+}
+
+.customer-mode-btn {
+  min-height: 38px;
+  padding: 9px 10px;
+  border: 1px solid #e8d9d0;
+  border-radius: 9px;
+  background: #fff;
+  color: #796963;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.customer-mode-btn:hover,
+.customer-mode-btn.active {
+  border-color: #c9817b;
+  background: #f8ebe7;
+  color: #4d3028;
+}
+
+.returning-customer {
+  margin-top: 12px;
+}
+
+.returning-customer[hidden] {
+  display: none;
+}
+
+.returning-customer label {
+  display: block;
+  margin-bottom: 6px;
+  color: #4d3028;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.customer-search-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 7px;
+}
+
+.customer-search-row input {
+  width: 100%;
+  min-width: 0;
+  padding: 11px 12px;
+  border: 1px solid #e8d9d0;
+  border-radius: 9px;
+  background: #fff;
+  outline: none;
+  font-size: 12px;
+}
+
+.customer-search-btn {
+  min-width: 70px;
+  padding: 0 13px;
+  border: 0;
+  border-radius: 9px;
+  background: #4d3028;
+  color: #fff;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.customer-search-btn:disabled {
+  opacity: .6;
+}
+
+.customer-search-message {
+  display: block;
+  min-height: 16px;
+  margin-top: 7px;
+  color: #796963;
+  font-size: 10px;
+}
+
+.customer-mode-btn.has-saved-customer::after {
+  content: " •";
+  color: #c9817b;
+}
+
+@media (max-width: 500px) {
+  .customer-mode-buttons,
+  .customer-search-row {
+    grid-template-columns: 1fr;
+  }
+
+  .customer-search-btn {
+    min-height: 40px;
+  }
+}
